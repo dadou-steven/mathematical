@@ -34,3 +34,5 @@ public class FactorielIter {
         solution.result(solution.factoriel());
     }
 }
+
+// https://github.com/dadou-steven/python-pensee-computationnelle/edit/main/FactorielIter.py
