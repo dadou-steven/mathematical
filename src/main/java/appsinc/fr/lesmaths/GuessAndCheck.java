@@ -27,3 +27,5 @@ public class GuessAndCheck {
 
     // méthodes
 }
+
+// https://github.com/dadou-steven/python-pensee-computationnelle/blob/main/GuessAndCheck.py
