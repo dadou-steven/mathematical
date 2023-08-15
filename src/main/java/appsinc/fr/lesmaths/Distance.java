@@ -1,11 +1,11 @@
 package appsinc.fr.lesmaths;
 
-public class Classes {
+public class Distance {
 
     private int x;
     private int y;
 
-    public Classes(int x, int y) {
+    public Distance(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -37,8 +37,7 @@ public class Classes {
     }
 
     public static void main(String[] args) {
-        Classes solution = new Classes(3, 4);
-
+        Distance solution = new Distance(3, 4);
         solution.result(solution.distance(0, 0));
     }
 }
