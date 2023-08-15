@@ -36,6 +36,8 @@ public class Distance {
         System.out.println(solution);
     }
 
+    // https://github.com/dadou-steven/python-pensee-computationnelle/edit/main/Distance.py
+
     public static void main(String[] args) {
         Distance solution = new Distance(3, 4);
         solution.result(solution.distance(0, 0));
