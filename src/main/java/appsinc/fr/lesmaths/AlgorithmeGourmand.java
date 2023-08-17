@@ -53,3 +53,5 @@ public class AlgorithmeGourmand {
         solution.str(solution.toString());
     }
 }
+
+// https://github.com/dadou-steven/python-pensee-computationnelle/blob/main/AlgorithmeGourmand.py
