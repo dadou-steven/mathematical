@@ -37,3 +37,5 @@ public class FactorielRecur {
         solution.factR(solution.recursive());
     }
 }
+
+// https://github.com/dadou-steven/python-pensee-computationnelle/blob/main/FactorielRecur.py
