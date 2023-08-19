@@ -42,3 +42,5 @@ public class SDeG { // Séquence de grêlon.
         sDeG.result(sDeG.sequence());
     }
 }
+
+// https://github.com/dadou-steven/python-pensee-computationnelle/blob/main/SDeG.py
