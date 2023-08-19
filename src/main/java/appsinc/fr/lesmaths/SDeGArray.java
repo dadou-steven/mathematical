@@ -58,3 +58,5 @@ public class SDeGArray { // Séquence de grêlon, array ou tableau, en Python li
         sDeGArray.result(sDeGArray.sequence());
     }
 }
+
+// https://github.com/dadou-steven/python-pensee-computationnelle/blob/main/SDeGList.py
