@@ -102,9 +102,9 @@ public class I2023SurLeRevenu2022 {
      * @return le résultat brut de leur impôt
      */
     public double marriedChild(double parents, double pourcent, double parts) {
-        double step1 = ((getSalairesNets().get(0) + getSalairesNets().get(1)) / parts);
-        double step2 = (step1 - getTranchesDeRevenus().get(1)) * (((getTauxDImposition().get(1)) / pourcent));
-        return step2 * parts;
+        parents = ((getSalairesNets().get(0) + getSalairesNets().get(1)) / parts);
+        double step1 = (parents - getTranchesDeRevenus().get(1)) * (((getTauxDImposition().get(1)) / pourcent));
+        return step1 * parts;
     }
 
     public String toString() {
@@ -123,7 +123,7 @@ public class I2023SurLeRevenu2022 {
 
         I2023SurLeRevenu2022 i2023SurLeRevenu2022 = new I2023SurLeRevenu2022
                 (new ArrayList<>(List.of("Célibataire sans enfant charge", "Couple marié ou pacsé sans enfant",
-                        "Couple marié ou pacsé avec enfants", "Parent isolé sans enfants", "parent isolé avec enfant")),
+                        "Couple marié ou pacsé avec enfants", "parent isolé")),
                         new ArrayList<>(List.of(0, 10777, 27478, 78570, 168994)),
                         new ArrayList<>(List.of(0, 11, 30, 41, 45)),
                         new ArrayList<>(List.of(30000, 30000)),
