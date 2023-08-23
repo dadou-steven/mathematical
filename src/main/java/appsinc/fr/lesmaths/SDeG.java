@@ -8,14 +8,6 @@ public class SDeG { // Séquence de grêlon.
         this.n = n;
     }
 
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
-    }
-
     public int sequence() {
         while (n != 1) {
             System.out.println(n);

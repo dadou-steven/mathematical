@@ -2,39 +2,21 @@ package appsinc.fr.lesmaths;
 
 public class FactorielRecur {
 
-    private int n;
-
-    public FactorielRecur(int n) {
-        this.n = n;
-    }
-
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
-    }
-
-    public int factRecur() {
-        return n - 1;
-    }
-
-    public int recursive() {
+    public static long recursive(int n) {
         if (n <= 1) {
             return 1;
         } else {
-            return n * factRecur();
+            return n * recursive(n - 1);
         }
     }
 
-    public void factR(int result) {
+    public void factR(long result) {
         System.out.println(result);
     }
 
     public static void main(String[] args) {
-        FactorielRecur solution = new FactorielRecur(3);
-        solution.factR(solution.recursive());
+        FactorielRecur solution = new FactorielRecur();
+        solution.factR(recursive(3));
     }
 }
 

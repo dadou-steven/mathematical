@@ -2,6 +2,12 @@ package appsinc.fr.lesmaths;
 
 public class FibonacciRecursiveNormal {
 
+    private int n;
+
+    public FibonacciRecursiveNormal(int n) {
+        this.n = n;
+    }
+
     public static int fib(int n) {
         if (n == 0 || n == 1) {
             return 1;
@@ -11,10 +17,10 @@ public class FibonacciRecursiveNormal {
     }
 
     public String toString() {
-        for (int i = 0; i < 101; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.println("fib(" + i + ") = " + fib(i));
         }
-        return null;
+        return "\nFib de " + n + " est donc " + fib(n);
     }
 
     public void fRN(String result) {
@@ -22,7 +28,7 @@ public class FibonacciRecursiveNormal {
     }
 
     public static void main(String[] args) {
-        FibonacciRecursiveNormal fibonacciRecursiveNormal = new FibonacciRecursiveNormal();
+        FibonacciRecursiveNormal fibonacciRecursiveNormal = new FibonacciRecursiveNormal(3);
         fibonacciRecursiveNormal.fRN(fibonacciRecursiveNormal.toString());
     }
 }
