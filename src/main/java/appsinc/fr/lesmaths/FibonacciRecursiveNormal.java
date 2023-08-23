@@ -28,7 +28,7 @@ public class FibonacciRecursiveNormal {
     }
 
     public static void main(String[] args) {
-        FibonacciRecursiveNormal fibonacciRecursiveNormal = new FibonacciRecursiveNormal(3);
+        FibonacciRecursiveNormal fibonacciRecursiveNormal = new FibonacciRecursiveNormal(101);
         fibonacciRecursiveNormal.fRN(fibonacciRecursiveNormal.toString());
     }
 }

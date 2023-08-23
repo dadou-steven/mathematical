@@ -41,7 +41,7 @@ public class AlgorithmeGourmand {
     }
 
     public String toString() {
-        return "Nom : " + name + "\nPoids total : " + value + " Kg\nCalories brulées : " + calories + "Kj\nCalories perdues : " + density() + " Kj";
+        return "Nom : " + getName() + "\nPoids total : " + getValue() + " Kg\nCalories brulées : " + getCalories() + "Kj\nCalories perdues : " + density() + " Kj";
     }
 
     public void str(String solution) {
