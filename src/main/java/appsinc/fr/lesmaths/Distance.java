@@ -27,8 +27,8 @@ public class Distance {
     }
 
     public double distance(double otherX, double otherY) {
-        double x_diff_sq = Math.pow((x - otherX), 2);
-        double y_diff_sq = Math.pow((y - otherY), 2);
+        double x_diff_sq = Math.pow((getX() - otherX), 2);
+        double y_diff_sq = Math.pow((getY() - otherY), 2);
         return Math.pow((x_diff_sq + y_diff_sq), 0.5);
     }
 

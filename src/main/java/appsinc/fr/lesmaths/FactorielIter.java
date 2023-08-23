@@ -18,8 +18,8 @@ public class FactorielIter {
 
     public long factoriel() {
         long fact = 1;
-        while (n > 1) {
-            fact *= n;
+        while (getN() > 1) {
+            fact *= getN();
             n -= 1;
         }
         return fact;

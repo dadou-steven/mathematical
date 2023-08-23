@@ -8,6 +8,14 @@ public class FibonacciRecursiveNormal {
         this.n = n;
     }
 
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
+
     public static int fib(int n) {
         if (n == 0 || n == 1) {
             return 1;
@@ -17,10 +25,10 @@ public class FibonacciRecursiveNormal {
     }
 
     public String toString() {
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i <= getN(); i++) {
             System.out.println("fib(" + i + ") = " + fib(i));
         }
-        return "\nFib de " + n + " est donc " + fib(n);
+        return "\nFib de " + getN() + " est donc " + fib(getN());
     }
 
     public void fRN(String result) {
