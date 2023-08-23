@@ -11,13 +11,13 @@ public class I2023SurLeRevenu2022 {
     private List<Integer> tranchesDeRevenus;
     private List<Integer> tauxDImposition;
     private List<Integer> salairesNets;
-    private List<Integer> enfants;
+    private List<Double> enfants;
 
     // constructeur
 
     public I2023SurLeRevenu2022(List<String> redevables, List<Integer> tranchesDeRevenus,
                                 List<Integer> tauxDImposition, List<Integer> salairesNets,
-                                List<Integer> enfants) {
+                                List<Double> enfants) {
         this.redevables = redevables;
         this.tranchesDeRevenus = tranchesDeRevenus;
         this.tauxDImposition = tauxDImposition;
@@ -59,11 +59,11 @@ public class I2023SurLeRevenu2022 {
         this.salairesNets = salairesNets;
     }
 
-    public List<Integer> getEnfants() {
+    public List<Double> getEnfants() {
         return enfants;
     }
 
-    public void setEnfants(List<Integer> enfants) {
+    public void setEnfants(List<Double> enfants) {
         this.enfants = enfants;
     }
 
@@ -96,21 +96,19 @@ public class I2023SurLeRevenu2022 {
 
     /**
      * Marié ou pacsé avec enfants
-     * @param parents les deux partenaires
      * @param pourcent en pourcentage
-     * @param parts de l'ensemble de famille
      * @return le résultat brut de leur impôt
      */
-    public double marriedChild(double parents, double pourcent, double parts) {
-        parents = ((getSalairesNets().get(0) + getSalairesNets().get(1)) / parts);
-        double step1 = (parents - getTranchesDeRevenus().get(1)) * (((getTauxDImposition().get(1)) / pourcent));
-        return step1 * parts;
+    public double marriedChild(double pourcent) {
+        double step1 = ((getSalairesNets().get(0) + getSalairesNets().get(1)) / getEnfants().get(5));
+        double step2 = (step1 - getTranchesDeRevenus().get(1)) * (((getTauxDImposition().get(1)) / pourcent));
+        return step2 * getEnfants().get(5);
     }
 
     public String toString() {
         return "Impôt brut pour un " + getRedevables().get(0) + " gagnant " + getSalairesNets().get(0) + " € net annuel est de " + seul(100) + " €.\n"
                 + "Impôt brut pour un " + getRedevables().get(1) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + married(2, 100) + " €.\n"
-                + "Impôt brut pour un " + getRedevables().get(2) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + marriedChild(2, 100, 2) + " €.\n";
+                + "Impôt brut pour un " + getRedevables().get(2) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + marriedChild(100) + " €.\n";
     }
 
     public void result(String solution) {
@@ -127,7 +125,7 @@ public class I2023SurLeRevenu2022 {
                         new ArrayList<>(List.of(0, 10777, 27478, 78570, 168994)),
                         new ArrayList<>(List.of(0, 11, 30, 41, 45)),
                         new ArrayList<>(List.of(30000, 30000)),
-                        new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)));
+                        new ArrayList<>(List.of(0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5)));
 
         i2023SurLeRevenu2022.result(i2023SurLeRevenu2022.toString());
     }
