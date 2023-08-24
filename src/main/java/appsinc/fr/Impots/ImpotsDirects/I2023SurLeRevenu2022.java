@@ -12,6 +12,7 @@ public class I2023SurLeRevenu2022 {
     private List<Integer> tauxDImposition;
     private List<Integer> salairesNets;
     private List<Double> enfants;
+    private static final double pourcent = 100;
 
     // constructeur
 
@@ -71,10 +72,9 @@ public class I2023SurLeRevenu2022 {
 
     /**
      * Célibataire sans enfants
-     * @param pourcent en pourcentage
      * @return le résultat brut d'imposition
      */
-    public double seul(double pourcent) {
+    public double seul() {
         double step1 = ((getTranchesDeRevenus().get(2) - (getTranchesDeRevenus().get(1))) * (getTauxDImposition().get(1) / pourcent));
         double step2 = ((getSalairesNets().get(0) - getTranchesDeRevenus().get(2))) * (getTauxDImposition().get(2) / pourcent);
         return getTranchesDeRevenus().get(0) + step1 + step2;
@@ -82,12 +82,10 @@ public class I2023SurLeRevenu2022 {
 
     /**
      * Marié ou pacsé sans enfants
-     * @param personnes les deux partenaires
-     * @param pourcent en pourcentage
      * @return le résultat brut de leur impôt
      */
-    public double married(double personnes, double pourcent) {
-        double step1 = (getSalairesNets().get(0) + getSalairesNets().get(1)) / personnes;
+    public double married() {
+        double step1 = (getSalairesNets().get(0) + getSalairesNets().get(1)) / getEnfants().get(3);
         double step2 = ((getTranchesDeRevenus().get(2) - (getTranchesDeRevenus().get(1))) * (getTauxDImposition().get(1) / pourcent));
         double step3 = ((step1 - getTranchesDeRevenus().get(2))) * (getTauxDImposition().get(2) / pourcent);
         double step4 = getTranchesDeRevenus().get(0) + step2 + step3;
@@ -96,19 +94,29 @@ public class I2023SurLeRevenu2022 {
 
     /**
      * Marié ou pacsé avec enfants
-     * @param pourcent en pourcentage
      * @return le résultat brut de leur impôt
      */
-    public double marriedChild(double pourcent) {
+    public double marriedChild() {
         double step1 = ((getSalairesNets().get(0) + getSalairesNets().get(1)) / getEnfants().get(5));
         double step2 = (step1 - getTranchesDeRevenus().get(1)) * (((getTauxDImposition().get(1)) / pourcent));
         return step2 * getEnfants().get(5);
     }
 
+    /**
+     * Marié ou pacsé avec enfants
+     * @return le résultat brut de son impôt
+     */
+    public double parentsI() {
+        double step1 = ((getSalairesNets().get(0)) / getEnfants().get(4));
+        double step2 = (step1 - getTranchesDeRevenus().get(1)) * (((getTauxDImposition().get(1)) / pourcent));
+        return step2 * getEnfants().get(4);
+    }
+
     public String toString() {
-        return "Impôt brut pour un " + getRedevables().get(0) + " gagnant " + getSalairesNets().get(0) + " € net annuel est de " + seul(100) + " €.\n"
-                + "Impôt brut pour un " + getRedevables().get(1) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + married(2, 100) + " €.\n"
-                + "Impôt brut pour un " + getRedevables().get(2) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + marriedChild(100) + " €.\n";
+        return "Impôt brut pour un " + getRedevables().get(0) + " gagnant " + getSalairesNets().get(0) + " € net annuel est de " + seul() + " €.\n"
+                + "Impôt brut pour un " + getRedevables().get(1) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + married() + " €.\n"
+                + "Impôt brut pour un " + getRedevables().get(2) + " gagnant " + (getSalairesNets().get(0) + getSalairesNets().get(1)) + " € net annuel est de " + marriedChild() + " €.\n"
+                + "Impôt brut pour un " + getRedevables().get(3) + " gagnant " + (getSalairesNets().get(0)) + " € net annuel est de " + parentsI() + " €.\n";
     }
 
     public void result(String solution) {
