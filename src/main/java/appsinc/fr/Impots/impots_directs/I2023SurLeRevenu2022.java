@@ -1,7 +1,9 @@
-package appsinc.fr.Impots.ImpotsDirects;
+package appsinc.fr.Impots.impots_directs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class I2023SurLeRevenu2022 {
 
