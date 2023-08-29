@@ -2,10 +2,8 @@ package appsinc.fr.Impots.impots_directs;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
-public class I2023SurLeRevenu2022 {
+public class I2023SurLeRevenu2022 implements I2023For2022 {
 
     // déclaration de variables d'instance
 

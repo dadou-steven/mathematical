@@ -23,5 +23,7 @@ public class StringLengthComparator implements Comparator<String> {
 
         SortedSet<String> strings = new TreeSet<>(List.of("Yolanda", "Zach", "Alice", "Bob"));
         System.out.println(strings);
+
+        new Thread(() -> System.out.println("Bonjour depuis un thread !")).start();
     }
 }
