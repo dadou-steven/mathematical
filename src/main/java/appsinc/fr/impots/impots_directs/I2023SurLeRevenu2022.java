@@ -1,4 +1,4 @@
-package appsinc.fr.Impots.impots_directs;
+package appsinc.fr.impots.impots_directs;
 
 import java.util.ArrayList;
 import java.util.List;

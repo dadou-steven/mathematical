@@ -1,4 +1,4 @@
-package appsinc.fr.Impots.impots_directs;
+package appsinc.fr.impots.impots_directs;
 
 public interface I2023For2022 {
     public double seul();
