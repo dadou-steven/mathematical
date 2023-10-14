@@ -1,6 +1,9 @@
 // En Java, le résultat est affiché pendant environ 2738 secondes ou 46 minutes.
 // In Java, the result is displayed for approximately 2738 seconds or 46 minutes.
 
+// En Python, le résultat est affiché pendant environ 21042 secondes ou 6 heures.
+// In Python, the result is displayed for approximately 21042 seconds or 6 hours.
+
 package appsinc.fr.performance;
 
 import java.util.Random;

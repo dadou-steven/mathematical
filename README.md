@@ -1,1 +1,1 @@
-# mathematical
+# [mathematical](#)
