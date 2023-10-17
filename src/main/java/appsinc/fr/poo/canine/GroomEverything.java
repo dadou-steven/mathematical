@@ -14,7 +14,10 @@ public class GroomEverything {
         };
 
         for (Groomable g : groomer) {
-            //g.groom();
+            g.groom();
+            g.pay();
         }
+
+        Groomable.calculateTip(39.99, 20);
     }
 }
