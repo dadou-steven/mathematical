@@ -1,8 +1,19 @@
-package appsinc.fr.lesmaths.fahrenheit_to_celsius;
+package appsinc.fr;
 
 import java.util.Arrays;
 
 public class LesTableaux {
+
+    public static double getAvg(int[][] a) {
+        double total = 0;
+        for (int[] row : a) {
+            for (int col : row) {
+                total += col;
+            }
+        }
+        return total / (a.length * a[0].length);
+    }
+
     public static void main(String[] args) {
         double[] weekHighs = { 80, 70, 75, 69, 72, 74, 90};
         double highSum = 0;
@@ -33,7 +44,7 @@ public class LesTableaux {
         double average = (args.length > 0) ? (sum / args.length) : 0;
         System.out.println("Average is : " + average);
 
-        double[][] array2d = {{80, 70, 75}, {69, 72, 74}};
+        double[][] array2d = {{80, 70, 75}, {69, 72, 74, 90}};
         final double MIN_TEMP = 75;
         final double MAX_TEMP = 90;
         for (double[] row : array2d) {
